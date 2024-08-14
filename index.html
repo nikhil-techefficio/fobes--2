@@ -1,0 +1,1075 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chennai-Registration</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            position: absolute;
+        }
+
+        header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 10px 20px;
+            background-color: white;
+            border-bottom: 1px solid #ccc;
+            position: fixed;
+            z-index: 2;
+            width: 100%;
+        }
+
+        header img {
+            height: 2.604vw;
+            ;
+        }
+
+        nav {
+            display: flex;
+            align-items: center;
+        }
+
+        nav a {
+            margin: 0 10px;
+            text-decoration: none;
+            color: black;
+        }
+
+        nav a:hover {
+            text-decoration: underline;
+        }
+
+        .hero {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            color: white;
+            text-align: center;
+            position: relative;
+            margin-top: 40px;
+            object-fit: cover;
+
+        }
+
+        .hero::after {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+        }
+
+        .hero-content {
+            position: relative;
+            z-index: 1;
+        }
+
+        .content {
+            padding: 20px;
+            text-align: center;
+        }
+
+        .content h2 {
+            margin-top: 0;
+        }
+
+        .events {
+            padding: 40px 20px;
+            background: transparent linear-gradient(180deg, #108DCC 0%, #3A007A 100%) 0% 0% no-repeat padding-box;
+            color: white;
+        }
+
+        .event-item {
+            display: flex;
+            align-items: center;
+            justify-content: space-around;
+            margin: 0 auto;
+            padding: 20px;
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 10px;
+        }
+
+        .event-item img {
+            max-width: 100%;
+            border-radius: 10px;
+        }
+
+        .co-sponsors {
+            padding: 20px;
+            text-align: center;
+            background-color: #f0f0f0;
+        }
+
+        .co-sponsors h2 {
+            margin-top: 0;
+        }
+
+        .sponsor-logos {
+            display: flex;
+            overflow-x: auto;
+            padding: 10px 0;
+            align-items: center;
+            scrollbar-width: thin;
+            scrollbar-color: #888 #f1f1f1;
+
+        }
+
+        .sponsor-logos img {
+            max-width: 200px;
+            margin: 0 10px;
+            border-radius: 10px;
+        }
+
+        .menu-toggle {
+            display: none;
+            flex-direction: column;
+            cursor: pointer;
+        }
+
+        .menu-toggle div {
+            width: 25px;
+            height: 3px;
+            background-color: black;
+            margin: 5px 0;
+        }
+
+        .nav-links {
+            display: flex;
+        }
+
+        .tempcontrol {
+
+            width: auto;
+        }
+
+        .about-container {
+            /* display: grid; */
+            grid-template-columns: 50% 50%;
+            text-align: center;
+            gap: 20px;
+            padding: 25px;
+            /* background-image: url("asserts/374.png"); */
+           
+        }
+
+        .footercon {
+            display: grid;
+            grid-template-columns: 33% 33% 33%;
+
+        }
+
+        .foottxt {
+            color: black;
+            padding: 5px 1px 5px 1px;
+            font: normal normal normal 16px/20px Segoe UI;
+        }
+
+        .container {
+            padding: 10px 0px;
+            text-align: center;
+            background: transparent linear-gradient(0deg, #FFFFFF 0%, #3A007A82 100%) 0% 0% no-repeat padding-box;
+            margin: 0 auto;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            border-radius: 8px;
+        }
+
+        .title {
+            font-size: 2em;
+            margin-bottom: 30px;
+            color: #333;
+        }
+
+        .cities {
+            display: flex;
+            justify-content: space-around;
+            flex-wrap: wrap;
+        }
+
+        .city {
+            margin: 20px;
+            text-align: center;
+
+        }
+
+        .city img {
+            width: 180px;
+            height: 160px;
+            object-fit: contain;
+        }
+
+        .city-name {
+            margin-top: 15px;
+            font-size: 1.2em;
+            color: #ffffff;
+        }
+
+        .bannerc {
+            width: 100%;
+            aspect-ratio: 18/9;
+        }
+
+        .fonth {
+            font: normal normal bold 20px / 33px Segoe UI
+        }
+
+        .headder {
+            font: normal normal bold 33px/50px Segoe UI;
+            letter-spacing: 0px;
+            color: #EEEEF8;
+            opacity: 1;
+        }
+
+        .about-right {
+            padding: 0px 20px 0px 20px;
+        }
+
+        .about-right p {
+            text-align: justify;
+            font: normal normal normal 18px/28px Segoe UI;
+            letter-spacing: 0px;
+            color: #000000;
+            text-wrap: pretty;
+            background-color: rgba(255, 255, 255, 0.3);
+        }
+
+        .about-left img {
+            margin-top: -10px;
+        }
+
+        .city-txt {
+            font: normal normal bold 2vw / 0px Segoe UI;
+            letter-spacing: 0px;
+            color: #3F478C;
+        }
+
+        .phones {
+
+            height: 2.9vw;
+            /* aspect-ratio: 6 / 2; */
+        }
+
+        @media (max-width: 768px) {
+            .forbelo {
+                height: 2.8vh;
+            }
+
+            .phones {
+
+                height: 5.904vw;
+                aspect-ratio: 6 / 2;
+            }
+
+            .city-txt {
+                font: normal normal bold 16px / 0px Segoe UI;
+                margin-top: 0px;
+
+            }
+
+            .about-right {
+                padding: 0px 6px 0px 6px;
+            }
+
+            .about-right p {
+                text-align: justify;
+                font: normal normal normal 16px/24px Segoe UI;
+
+            }
+
+            .headder {
+                font: normal normal bold 20px/50px Segoe UI;
+
+            }
+
+            .bannerc {
+                aspect-ratio: 0;
+            }
+
+            header img {
+                height: 4.404vw;
+                ;
+            }
+
+            .city img {
+                width: 60px;
+                height: 120px;
+            }
+
+            .fonth {
+                font: normal normal bold 16px / 20px Segoe UI
+            }
+
+            .city-name {
+                font-size: 1em;
+            }
+
+            .footercon {
+                display: grid;
+                grid-template-columns: 100%;
+                text-align: center;
+            }
+
+            .foottxt {
+                padding: 0px;
+                margin-top: 1px;
+            }
+
+            .about-left {
+
+                justify-content: center;
+            }
+
+            .tempcontrol {
+
+                width: 100%;
+            }
+
+            .about-container {
+                grid-template-columns: 100%;
+                padding: 25px;
+            }
+
+            .event-item {
+                flex-direction: column;
+                text-align: center;
+            }
+
+            .event-item img {
+                max-width: 100%;
+                margin-top: 20px;
+            }
+        }
+
+
+        @media (max-width: 480px) {
+            .forbelo {
+                height: 2.4vh;
+            }
+
+            .phones {
+
+                height: 5.904vw;
+                aspect-ratio: 6 / 2;
+            }
+
+            .city {
+                margin: 10px;
+            }
+
+            .city img {
+                width: 50px;
+                height: 75px;
+            }
+
+            .city-name {
+                font-size: 0.9em;
+            }
+
+            .foottxt {
+                color: black;
+                padding: 1px 1px 1px 1px;
+                font: normal normal normal 12px/16px Segoe UI;
+            }
+
+            .social-icons a img {
+                width: 32px;
+            }
+        }
+
+
+        @media (max-width: 368px) {
+            .forbelo {
+                height: 2.6vh;
+            }
+
+            .phones {
+
+                height: 5.904vw;
+                aspect-ratio: 6 / 2;
+            }
+
+            .foottxt {
+                color: black;
+                padding: 0px 1px 0px 1px;
+                font: normal normal normal 12px/14px Segoe UI;
+            }
+
+            nav {
+                display: none;
+                flex-direction: column;
+                background-color: white;
+                position: absolute;
+                top: 60px;
+                right: 20px;
+                width: 200px;
+                border: 1px solid #ccc;
+            }
+
+            .nav-links {
+                flex-direction: column;
+            }
+
+            .nav-links a {
+                padding: 10px;
+                border-bottom: 1px solid #ccc;
+            }
+
+            .menu-toggle {
+                display: flex;
+            }
+        }
+
+        .about-left {
+            display: flex;
+            align-items: center;
+        }
+
+        .about-left h1 {
+            text-align: left;
+            font: normal normal 600 40px/106px Segoe UI;
+            letter-spacing: 0px;
+            color: #5F259F;
+        }
+
+        .social-icons {
+            display: flex;
+            gap: 10px;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .social-icons a img {
+            width: 30px;
+        }
+
+        a {
+            text-decoration: auto;
+        }
+
+
+        .gallery {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+    }
+
+    .gallery-item {
+      width: 23%;
+      height: 310px;
+      margin: 12px;
+      overflow: hidden;
+     
+
+   
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            overflow: hidden;
+            text-align: center;
+            background-color: #8F70B1;
+
+      
+    object-fit: cover;
+    }
+
+    .gallery-item img {
+      width: 300px;
+      height: 250px;
+      object-fit: cover;
+    }
+
+    /* Responsive layout */
+    @media (max-width: 768px) {
+      .gallery-item {
+        width: 45%;
+      }
+    }
+
+    @media (max-width: 480px) {
+      .gallery-item {
+        width: 100%;
+      }
+    }
+
+    .info {
+            padding: 4px;
+            background-color: #8F70B1;
+            color: white;
+            /* position: absolute; */
+            margin: 0px;
+        }
+
+
+        .foottxt a{
+
+            color:white
+        }
+
+
+        .sponsors-section {
+            background-color: #8F70B1; /* Adjust this color as needed */
+            padding: 40px 20px;
+            text-align: center;
+        }
+
+        .sponsors-section h2 {
+            color: #fff;
+            font-size: 24px;
+            margin-bottom: 30px;
+        }
+
+        .sponsors-container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .sponsor-item {
+            flex: 1;
+            text-align: center;
+            margin: 0 20px;
+        }
+
+        .sponsor-item h3 {
+            color: #fff;
+            font-size: 16px;
+            margin-bottom: 15px;
+        }
+
+        .sponsor-item img {
+            width: 150px; /* Adjust the width as needed */
+            height: auto;
+        }
+
+        .divider {
+            width: 2px;
+            height: 100px;
+            background-color: #fff;
+        }
+
+        @media (max-width: 768px) {
+            .sponsors-container {
+                flex-direction: column;
+            }
+
+            .divider {
+                display: none;
+            }
+
+            .sponsor-item {
+                margin-bottom: 20px;
+            }
+        }
+
+
+
+
+        .container {
+            display: flex;
+            flex-direction: row;
+            background-color: #9B59B6;
+           
+            padding: 20px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            color: #fff;
+        }
+        .form-section, .agenda-section {
+            flex: 1;
+            margin: 3%;
+        }
+        .form-section h2, .agenda-section h2 {
+            font-size: 24px;
+            margin-bottom: 20px;
+            border-bottom: 2px solid #fff;
+            padding-bottom: 10px;
+            text-transform: uppercase;
+        }
+        .form-section form {
+            display: flex;
+            flex-direction: column;
+        }
+        .form-section label {
+            margin-top: 10px;
+            font-size: 16px;
+            margin-bottom: 5px;
+            text-align: justify;
+        }
+        .form-section input[type="text"], 
+        .form-section input[type="email"], 
+        .form-section input[type="tel"] {
+            width: 100%;
+            padding: 12px;
+            margin: 8px 0;
+            border: none;
+            border-radius: 5px;
+            font-size: 16px;
+            color: #333;
+        }
+        .form-section input[type="submit"], 
+        .form-section input[type="button"] {
+            padding: 12px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 16px;
+            margin-top: 20px;
+        }
+        .form-section input[type="submit"] {
+            background-color: #5E3370;
+            color: #fff;
+            margin-right: 10px;
+            width: 120px;
+        }
+        .form-section input[type="button"] {
+            background-color: #fff;
+            color: #5E3370;
+            width: 120px;
+        }
+        .form-section .error-message {
+            color: #FFD700;
+            font-size: 14px;
+            margin-top: -10px;
+            margin-bottom: 10px;
+        }
+        .agenda-section ul {
+            list-style: none;
+            padding: 0;
+        }
+        .agenda-section li {
+            background-color: #7D3C98;
+            margin: 10px 0;
+            padding: 15px;
+            border-radius: 5px;
+            cursor: pointer;
+            position: relative;
+            text-align: justify;
+        }
+        .agenda-section li .dropdown-content {
+            display: none;
+            background-color: #6C3483;
+            padding: 10px;
+            margin-top: 10px;
+            border-radius: 5px;
+        }
+        .agenda-section li span {
+            font-size: 16px;
+        }
+        .agenda-section li button {
+            background-color: transparent;
+            border: none;
+            color: #fff;
+            font-size: 18px;
+            cursor: pointer;
+            position: absolute;
+            right: 15px;
+            top: 25px;
+            transform: translateY(-50%);
+            transition: transform 0.3s ease;
+        }
+        .agenda-section li.active button {
+            transform: rotate(180deg);
+        }
+        .success-popup {
+            display: none;
+            position: fixed;
+            top: 20px;
+            left: 50%;
+            transform: translateX(-50%);
+            background-color: #27AE60;
+            color: white;
+            padding: 15px 30px;
+            border-radius: 5px;
+            box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+            z-index: 1000;
+            font-size: 18px;
+        }
+        @media (max-width: 768px) {
+            .container {
+                flex-direction: column;
+                width: 90%;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <a href="https://www.forbesindia.com/">
+            <img src="asserts/logob.png" alt="Forbes Logo" class="forbelo"></a>
+
+        <nav id="nav">
+            <div class="nav-links">
+                <a class="fonth" href="#about" style="color: #5F259F;    ;
+    letter-spacing: 0px;">Home</a>
+                <a class="fonth" href="#event" style="
+                letter-spacing: 0px;
+                color: #000000; font-weight: 500;">Event</a>
+                <a class="fonth" href="#event" style="
+                letter-spacing: 0px;
+                color: #000000; font-weight: 500;">Agenda</a>
+                <a class="fonth" href="#event" style="
+                letter-spacing: 0px;
+                color: #000000; font-weight: 500;">Gallery</a>
+                <a class="" href="#event" style="
+                    letter-spacing: 0px;
+    background: #681EA3;
+    padding: 8px 10px 8px 10px;
+    border-radius: 5px;
+    color: white;
+    text-decoration: none;
+    font: normal normal normal 19px / 21px Segoe UI;">Chennai-Registration Open</a>
+            </div>
+        </nav>
+        <a href="https://www.phonepe.com/  " style="    margin-right: 7%;" class="fonth">
+            <img src="asserts/phone.png" alt="PhonePe Logo" class="phones"> </a>
+    </header>
+
+    <Section class="hero">
+        <div class="hero-content">
+
+            <img src="asserts/Bannechi.png" alt="PhonePe Logo" class="bannerc">
+            <!-- <button style="position: absolute;
+            top: 90%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            padding: 10px 20px;
+            font-size: 16px;
+            background-color: #4C167B;
+            color: white;
+            border: none;
+            cursor: pointer;
+            border-radius: 5px;">Channai Live Event</button> -->
+
+        </div>
+    </Section>
+
+    <section class="about-container">
+        <div> <h2 style="font: normal normal bold 28px/16px Segoe UI;
+            letter-spacing: 0px;
+            color: #4C167B;
+            text-transform: uppercase;
+            opacity: 1;">ABOUT THE EVENT</h2></div>
+       <br/>
+       <div> <p style="    font: normal normal normal 17px / 29px Segoe UI;">
+        India is striving to become the world's 3rd largest economy by 2027 and a developed nation by 2047,
+        necessitating sustained economic growth of 6.5% annually until 2027 and 8-9% thereafter. Small
+        businesses will be crucial in this effort. Currently, Micro, Small, and Medium Enterprises (MSMEs)
+        contribute around 30% to India’s GDP, account for 43.6% of merchandise exports, and provide nearly 123
+        million jobs. The key is for Indian entrepreneurs, known for their innovation and problem-solving, to
+        rapidly scale up their small businesses, driving grassroots growth.
+        <br /><br />
+        In this evolving landscape, Forbes India introduces ‘The Small Business Summit,’ aimed at becoming the
+        largest platform for small businesses in India. As a precursor to the Summit, Forbes India will host SMB
+        Huddle events in Bangalore, Pune, Chennai, and Chandigarh, culminating in the main Summit in Delhi.
+    </p></div> 
+    </section>
+
+
+
+
+     <!-- form -->
+
+
+ <div class="container">
+    <div class="form-section">
+        <h2>Registration Form</h2>
+        <form id="registrationForm">
+            <label for="fullName">Full Name</label>
+            <input type="text" id="fullName" placeholder="Full Name" required>
+            <div id="fullNameError" class="error-message"></div>
+
+            <label for="contactNumber">Contact Number</label>
+            <input type="tel" id="contactNumber" placeholder="Contact Number" required>
+            <div id="contactNumberError" class="error-message"></div>
+
+            <label for="company">Company</label>
+            <input type="text" id="company" placeholder="Company" required>
+
+            <label for="designation">Designation</label>
+            <input type="text" id="designation" placeholder="Designation" required>
+
+            <label for="email">Email</label>
+            <input type="email" id="email" placeholder="Email" required>
+            <div id="emailError" class="error-message"></div>
+
+            <label for="city">City</label>
+            <input type="text" id="city" placeholder="City" required>
+
+            <label for="industry">Industry</label>
+            <input type="text" id="industry" placeholder="Industry" required>
+
+            <div style="display: flex; justify-content: space-between;">
+                <input type="button" value="Cancel">
+                <input type="submit" value="Submit">
+            </div>
+        </form>
+    </div>
+    <div class="agenda-section">
+        <h2>Agenda</h2>
+        <ul>
+            <li>
+                <span>17:30:00 Registration</span>
+            </li>
+            <li>
+                <span>18:00:00 Opening Address by Radhika Sinha, Network18</span>
+            </li>
+            <li>
+                <span>18:03:00 Welcome Address by Shruti Mishra, CNBC-TV18</span>
+            </li>
+            <li>
+                <span>18:10:00 Opening Address by PhonePe PG Representative</span>
+            </li>
+            <li onclick="toggleDropdown(this)">
+                <span>18:20:00 Panel 1</span> <button>+</button>
+                <div class="dropdown-content">
+                    <p>Details about Panel 1...</p>
+                </div>
+            </li>
+            <li onclick="toggleDropdown(this)">
+                <span>18:50:00 Panel 2</span> <button>+</button>
+                <div class="dropdown-content">
+                    <p>Details about Panel 2...</p>
+                </div>
+            </li>
+            <li onclick="toggleDropdown(this)">
+                <span>19:20:00 Fireside Chat</span> <button>+</button>
+                <div class="dropdown-content">
+                    <p>Details about Fireside Chat...</p>
+                </div>
+            </li>
+            <li>
+                <span>19:50:00 10 SMB Felicitation</span>
+            </li>
+            <li>
+                <span>20:20:00 Dinner & Networking</span>
+            </li>
+        </ul>
+    </div>
+</div>
+
+<div class="success-popup" id="successPopup">
+    Registration successful!
+</div>
+
+
+
+
+<!--Speakers -->
+
+    <section class="about-container">
+        <div> <h2 style="font: normal normal bold 28px/16px Segoe UI;
+            letter-spacing: 0px;
+            color: #4C167B;
+            text-transform: uppercase;
+            opacity: 1;">SPEAKERS</h2></div>
+       <br/> 
+       <div class="gallery">
+       <div class="gallery-item">
+        <img src="asserts/jenny.jpg" alt="Image 1">
+       
+            <h3 class="info">Priyanka Sawnvey</h3>
+            <h5 class="info">President</h5>
+        
+      </div>
+      <div class="gallery-item">
+        <img src="asserts/jenny.jpg" alt="Image 2">
+
+        <h3 class="info">Priyanka Sawnvey</h3>
+            <h5 class="info">President</h5>
+      </div>
+        <div class="gallery-item">
+        <img src="asserts/jenny.jpg" alt="Image 1">
+        <h3 class="info">Priyanka Sawnvey</h3>
+            <h5 class="info">President</h5>
+      </div>
+      <div class="gallery-item">
+        <img src="asserts/jenny.jpg" alt="Image 2">
+        <h3 class="info">Priyanka Sawnvey</h3>
+            <h5 class="info">President</h5>
+      </div>
+        <div class="gallery-item">
+        <img src="asserts/jenny.jpg" alt="Image 1">
+        <h3 class="info">Priyanka Sawnvey</h3>
+            <h5 class="info">President</h5>
+      </div>
+      <div class="gallery-item">
+        <img src="asserts/jenny.jpg" alt="Image 2">
+        <h3 class="info">Priyanka Sawnvey</h3>
+            <h5 class="info">President</h5>
+      </div>
+        <div class="gallery-item">
+        <img src="asserts/jenny.jpg" alt="Image 1">
+        <h3 class="info">Priyanka Sawnvey</h3>
+            <h5 class="info">President</h5>
+      </div>
+      <div class="gallery-item">
+        <img src="asserts/jenny.jpg" alt="Image 2">
+        <h3 class="info">Priyanka Sawnvey</h3>
+            <h5 class="info">President</h5>
+      </div>
+        <div class="gallery-item">
+        <img src="asserts/jenny.jpg" alt="Image 1">
+        <h3 class="info">Priyanka Sawnvey</h3>
+            <h5 class="info">President</h5>
+      </div>
+      <div class="gallery-item">
+        <img src="asserts/jenny.jpg" alt="Image 2">
+        <h3 class="info">Priyanka Sawnvey</h3>
+            <h5 class="info">President</h5>
+      </div>  <div class="gallery-item">
+        <img src="asserts/jenny.jpg" alt="Image 1">
+        <h3 class="info">Priyanka Sawnvey</h3>
+            <h5 class="info">President</h5>
+      </div>
+      </div>
+     
+    </section>
+
+
+
+
+
+
+
+
+         <section class="sponsors-section">
+            <h2>SPONSORS</h2>
+            <div class="sponsors-container">
+                <div class="sponsor-item">
+                    <h3>Presenting Sponsor</h3>
+                    <div style="    background-color: #f2f0f0;
+                    width: 60%;
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+                    margin-left: 20%;
+                        height: 60px;"> 
+                    
+                    <img src="asserts/phone.png" alt="PhonePe Logo"></div>
+                   
+                </div>
+                <div class="divider"></div>
+                <div class="sponsor-item">
+                    <h3>Presenting Sponsor</h3>
+                    <div style="    background-color:white;
+                    width: 60%;
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+                    margin-left: 20%;
+                        height: 60px;"> 
+                    
+                    <img src="asserts/DTDC.png" alt="PhonePe Logo"></div>
+                   
+                </div>
+                <div class="divider"></div>
+                <div class="sponsor-item">
+                    <h3>Presenting Sponsor</h3>
+                    <div style="    background-color:white;
+                    width: 60%;
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+                    margin-left: 20%;
+                        height: 60px;"> 
+                    
+                    <img src="asserts/DTDC.png" alt="PhonePe Logo"></div>
+                   
+                </div>
+            </div>
+        </section>
+
+        <div style="text-align: center;">
+            <p style="font: normal normal normal 18px / 34px Segoe UI;">For any queries please Email us: <a href="mailto:ForbesIndiaSMB@nw18.com">ForbesIndiaSMB@nw18.com</a></p>
+        </div>
+    <footer class="footercon" style="background: #8C58B9;">
+        <p class="foottxt"><a href="https://www.forbesindia.com/" target="_blank">© 2024, FORBESINDIA.COM ALL RIGHTS
+                RESERVED</a> </p>
+        <p class="foottxt">
+            <a href="https://www.forbesindia.com/disclaimer/" target="_blank"> DISCLAMER</a>
+            <a href="https://www.forbesindia.com/terms-conditions/" target="_blank">|TERMS AND CONDITIONS|</a>
+            <a href="https://www.forbesindia.com/privacy/" target="_blank">PRIVACY POLICY</a>
+        </p>
+        <div class="social-icons">
+            <a href="https://www.facebook.com/ForbesIndia" target="_blank"><img src="asserts/facebook.png"
+                    alt="Facebook"></a>
+            <a href="https://x.com/forbes_india?lang=en" target="_blank"><img src="asserts/xtw.png" alt="Twitter"></a>
+            <a href="https://www.instagram.com/forbesindia/?hl=en" target="_blank"><img src="asserts/instagram.png"
+                    alt="Instagram"></a>
+            <a href="https://www.linkedin.com/company/forbes-india/" target="_blank"><img src="asserts/linkedin.png"
+                    alt="LinkedIn"></a>
+            <a href="https://www.youtube.com/channel/UCb9Cheg6Cf6r2mcsaleVx7g" target="_blank"><img
+                    src="asserts/youtube.png" alt="YouTube"></a>
+            <a href="https://t.me/news18dotcom" target="_blank"><img src="asserts/telegram.png" alt="Telegram"></a>
+        </div>
+
+    </footer>
+    <script>
+        document.getElementById('menu-toggle').addEventListener('click', function () {
+            var nav = document.getElementById('nav');
+            if (nav.style.display === 'flex') {
+                nav.style.display = 'none';
+            } else {
+                nav.style.display = 'flex';
+            }
+        });
+    </script>
+
+<script>
+    document.getElementById("registrationForm").addEventListener("submit", function(event) {
+        event.preventDefault();
+
+        // Clear previous error messages
+        document.getElementById("contactNumberError").textContent = "";
+        document.getElementById("emailError").textContent = "";
+
+        const contactNumber = document.getElementById("contactNumber").value;
+        const email = document.getElementById("email").value;
+        const emailPattern = /^[a-zA-Z0-9._%+-]+@gmail\.com$/;
+        let isValid = true;
+
+        if (contactNumber.length !== 10) {
+            document.getElementById("contactNumberError").textContent = "Contact Number must be 10 digits.";
+            isValid = false;
+        }
+
+        if (!emailPattern.test(email)) {
+            document.getElementById("emailError").textContent = "Please enter a valid Gmail address.";
+            isValid = false;
+        }
+
+        if (isValid) {
+            // Show success popup
+            const successPopup = document.getElementById("successPopup");
+            successPopup.style.display = "block";
+
+            setTimeout(() => {
+                successPopup.style.display = "none";
+            }, 5000);
+
+            // Optionally, reset the form
+            document.getElementById("registrationForm").reset();
+        }
+    });
+
+    function toggleDropdown(element) {
+        const content = element.querySelector(".dropdown-content");
+        const button = element.querySelector("button");
+        if (content.style.display === "block") {
+            content.style.display = "none";
+            button.textContent = "+";
+        } else {
+            content.style.display = "block";
+            button.textContent = "-";
+        }
+    }
+</script>
+</body>
+
+</html>
